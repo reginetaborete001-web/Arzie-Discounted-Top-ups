@@ -1,70 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ARZIE DISCOUNTED TOP-UPS</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
 body{background:#060a1f;color:#fff}
-.header{background:linear-gradient(90deg,#0f1535,#1a1a5c);padding:20px;text-align:center;border-bottom:3px solid #a855f7;position:sticky;top:0;z-index:10}
-.header h1{color:#c084fc;font-size:18px;font-weight:900}
-.header p{font-size:10px;color:#aaa;margin-top:4px}
+.header{background:linear-gradient(90deg,#0f1535,#1a1a5c);padding:18px;text-align:center;border-bottom:3px solid #a855f7}
 .container{max-width:550px;margin:auto;padding:12px}
 .input-box{background:#151a3d;padding:16px;border-radius:14px;margin-bottom:14px;border:1px solid #2a2f5a}
 .input-box label{font-size:11px;color:#a855f7;display:block;margin:8px 0 4px;font-weight:bold}
-.input-box label:first-child{margin-top:0}
-.input-box input,.input-box select{width:100%;padding:12px;border-radius:10px;border:none;background:#0a0e27;color:#fff;font-size:14px}
+.input-box input,.input-box select{width:100%;padding:12px;border-radius:10px;border:none;background:#0a0e27;color:#fff}
 .sec{color:#c084fc;margin:22px 0 10px;font-size:14px;font-weight:900;border-left:4px solid #a855f7;padding-left:10px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;min-height:50px}
 .card{background:linear-gradient(135deg,#151a3d,#1e2450);border-radius:14px;padding:14px;text-align:center;border:1px solid #2a2f5a}
-.card b{font-size:14px}
-.card .price{color:#a855f7;font-weight:900;font-size:15px;margin-top:6px}
+.card b{font-size:13px;display:block}
+.price{color:#a855f7;font-weight:900;font-size:15px;margin-top:6px}
 .card button{background:linear-gradient(90deg,#a855f7,#7c3aed);color:#fff;border:none;padding:9px;border-radius:10px;width:100%;font-weight:900;font-size:11px;margin-top:10px}
-.card.special{border-color:#a855f7;background:linear-gradient(135deg,#1e1235,#2a1a4d)}
 .mop{background:#151a3d;border-radius:14px;padding:16px;margin-top:22px;border:1px solid #2a2f5a}
-.mop-title{color:#c084fc;font-size:13px;text-align:center;margin-bottom:14px;font-weight:900}
 .mop-item{background:#0a0e27;border-radius:12px;padding:14px;margin-bottom:10px;border:1px solid #222;display:flex;justify-content:space-between;align-items:center}
-.mop-item b{font-size:13px}
-.mop-item span{font-size:11px;color:#ddd;display:block;margin-top:3px}
 .copy-btn{background:#a855f7;color:#fff;border:none;padding:8px 12px;border-radius:8px;font-size:11px;font-weight:900}
-.footer{text-align:center;padding:20px 0 35px;font-size:10px;color:#555;line-height:16px}
 </style>
 </head>
 <body>
-<div class="header">
-<h1>💎 ARZIE DISCOUNTED TOP-UPS 💎</h1>
-<p>MLBB PH SERVER • FAST 24/7 • LEGIT RESELLER</p>
-</div>
-
+<div class="header"><h1>💎 ARZIE DISCOUNTED TOP-UPS 💎</h1><p style="font-size:10px;color:#aaa">MLBB PH SERVER • FAST 24/7 • LEGIT</p></div>
 <div class="container">
 <div class="input-box">
 <label>ML User ID</label><input id="uid" placeholder="Ex: 12345678">
 <label>Zone ID</label><input id="zone" placeholder="Ex: 1234">
-<label>Mode of Payment</label>
-<select id="mop">
-<option>GCash</option><option>Maya</option><option>BDO</option><option>MariBank</option><option>CIMB</option>
-</select>
+<label>Mode of Payment</label><select id="mop"><option>GCash</option><option>Maya</option><option>BDO</option><option>MariBank</option><option>CIMB</option></select>
 </div>
 
-<div class="sec">✨ DOUBLE DIAMONDS</div>
-<div class="grid" id="double"></div>
-
-<div class="sec">⭐ PASSES & BUNDLES</div>
-<div class="grid" id="passes"></div>
-
-<div class="sec">💎 DIAMONDS - LEGIT DISCOUNTED</div>
-<div class="grid" id="diamonds"></div>
+<div class="sec">✨ DOUBLE DIAMONDS</div><div class="grid" id="doubleBox"></div>
+<div class="sec">⭐ PASSES & BUNDLES</div><div class="grid" id="passBox"></div>
+<div class="sec">💎 DIAMONDS - LEGIT DISCOUNTED</div><div class="grid" id="diaBox"></div>
 
 <div class="mop">
-<div class="mop-title">💳 MODE OF PAYMENT - TAP COPY</div>
+<h3 style="color:#c084fc;font-size:13px;text-align:center;margin-bottom:14px">💳 MODE OF PAYMENT - TAP COPY</h3>
+<div class="mop-item"><div><b style="color:#0074e4">📱 GCash</b><br><span style="font-size:11px" id="gcashNum">09933891470 - RE***E T.</span></div><button class="copy-btn" onclick="copyAcc('gcashNum')">COPY</button></div>
+<div class="mop-item"><div><b style="color:#00b14f">💚 Maya</b><br><span style="font-size:11px" id="mayaNum">09933891470 - REGINE T. TABORETE</span></div><button class="copy-btn" onclick="copyAcc('mayaNum')">COPY</button></div>
+<div class="mop-item"><div><b style="color:#ffcc00">🏦 BDO</b><br><span style="font-size:11px" id="bdoNum">013986000776 - REGINE T. TABORETE</span></div><button class="copy-btn" onclick="copyAcc('bdoNum')">COPY</button></div>
+<div class="mop-item"><div><b style="color:#ff6b35">🏦 MariBank</b><br><span style="font-size:11px" id="mariNum">18453421937 - REGINE T. TABORETE</span></div><button class="copy-btn" onclick="copyAcc('mariNum')">COPY</button></div>
+<div class="mop-item"><div><b style="color:#e60000">🏦 CIMB</b><br><span style="font-size:11px" id="cimbNum">4367413417025297 - REGINE T. TABORETE</span></div><button class="copy-btn" onclick="copyAcc('cimbNum')">COPY</button></div>
+</div>
+</div>
 
-<div class="mop-item"><div><b style="color:#0074e4">📱 GCash</b><span id="gcashNum">09933891470 - RE***E T.</span></div><button class="copy-btn" onclick="copyAcc('gcashNum')">COPY</button></div>
+<script>
+function orderItem(name, price){
+ let uid=document.getElementById('uid').value;
+ let zone=document.getElementById('zone').value;
+ let mop=document.getElementById('mop').value;
+ if(!uid||!zone){alert('Lagay UID at Zone muna boss!');return;}
+ let acc=document.getElementById(mop==='GCash'?'gcashNum':mop==='Maya'?'mayaNum':mop==='BDO'?'bdoNum':mop==='MariBank'?'mariNum':'cimbNum').innerText;
+ let msg='ORDER ARZIE\nItem: '+name+'\nPrice: ₱'+price+'\nUID:'+uid+' Zone:'+zone+'\nMOP:'+mop+' - '+acc;
+ navigator.clipboard.writeText(msg);
+ window.open('https://www.facebook.com/share/1DegvvE2NK/','_blank');
+}
+function copyAcc(id){
+ let t=document.getElementById(id).innerText;
+ navigator.clipboard.writeText(t);
+ alert('✅ Na-copy: '+t);
+}
+window.onload=function(){
+ let doubleData=[['50+50',54],['150+150',158],['250+250',268],['500+500',540]];
+ let passData=[['Weekly Diamond Pass',110],['Weekly Elite Bundle',55],['Monthly Epic Bundle',270],['Twilight Pass',536],['Starlight',140],['Starlight Premium',290]];
+ let diaData=[['11',11],['22',22],['56',54],['112',107],['168',161],['223',215],['279',269],['336',323],['448',430],['570',538],['626',591],['682',645],['738',699],['849',806],['906',861],['1018',968],['1163',1077],['1733',1615],['2398',2152],['3561',3229],['5132',4628],['6042',5382],['7205',6459],['8440',7535],['9010',8072],['10173',9149],['12084',10764],['20524',18299]];
 
-<div class="mop-item"><div><b style="color:#00b14f">💚 Maya</b><span id="mayaNum">09933891470 - REGINE T. TABORETE</span></div><button class="copy-btn" onclick="copyAcc('mayaNum')">COPY</button></div>
+ let html1=''; for(let i=0;i<doubleData.length;i++){ html1+='<div class="card"><b>'+doubleData[i][0]+'</b><div class="price">₱'+doubleData[i][1]+'</div><button onclick="orderItem(\''+doubleData[i][0]+'\','+doubleData[i][1]+')">ORDER VIA FB</button></div>'; }
+ document.getElementById('doubleBox').innerHTML=html1;
 
-<div class="mop-item"><div><b style="color:#ffcc00">🏦 BDO</b><span id="bdoNum">013986000776 - REGINE T. TABORETE</span></div><button class="copy-btn" onclick="copyAcc('bdoNum')">COPY</button></div>
+ let html2=''; for(let i=0;i<passData.length;i++){ html2+='<div class="card"><b style="font-size:11px">'+passData[i][0]+'</b><div class="price">₱'+passData[i][1]+'</div><button onclick="orderItem(\''+passData[i][0]+'\','+passData[i][1]+')">ORDER VIA FB</button></div>'; }
+ document.getElementById('passBox').innerHTML=html2;
 
-<div class="mop-item"><div><b style="color:#ff6b35">🏦 MariBank</b><span id="mariNum">18453421937 - REGINE T. TABORETE</span></div><button class="copy-btn" onclick="copyAcc('mariNum')">COPY</button></div>
-
-<div class="mop-item"><div><b style="color:#e60000">🏦 CIMB</b><span id="cimbNum">4367413417025297 - REGINE T. TABORETE</span></div><button class="copy-btn" onclick="copyAcc('cimbNum')">COPY</button></div>
+ let html3=''; for(let i=0;i<diaData.length;i++){ html3+='<div class="card"><b>'+diaData[i][0]+' 💎</b><div class="price">₱'+diaData[i][1]+'</div><button onclick="orderItem(\''+diaData[i][0]+' Diamonds\','+diaData[i][1]+')">ORDER VIA FB</button></div>'; }
+ document.getElementById('diaBox').innerHTML=html3;
+}
+</script>
+</body></html>
