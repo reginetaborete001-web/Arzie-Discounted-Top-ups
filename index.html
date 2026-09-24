@@ -1,58 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARZIE DISCOUNTED TOP-UPS</title>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ARZIE DISCOUNTED TOP-UPS - MLBB PH</title>
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-b from-pink-400 to-purple-700 min-h-screen p-3">
-<div class="max-w-md mx-auto bg-white rounded-[24px] overflow-hidden shadow-2xl">
-<div class="bg-gradient-to-r from-pink-500 to-purple-600 p-5 text-white text-center">
-<h1 class="text-2xl font-black">ARZIE DISCOUNTED TOP-UPS 💎</h1>
-<p class="text-sm">Legit • Mura • Fast - MLBB</p>
+<body class="bg-[#0a0e27] min-h-screen p-2">
+<div class="max-w-6xl mx-auto">
+<div class="bg-gradient-to-r from-yellow-400 via-purple-600 to-blue-600 p-3 rounded-t-xl text-center border-4 border-white">
+<h1 class="text-white font-black text-2xl tracking-wider">MLBB PH SERVER</h1>
+<p class="text-yellow-200 font-black">ARZIE DISCOUNTED TOP-UPS 💎</p>
 </div>
-<div class="p-4 space-y-4">
-<div class="bg-gray-50 p-3 rounded-xl">
-<label class="font-bold text-sm">MLBB ID + Zone</label>
-<div class="flex gap-2 mt-2">
-<input id="mlid" placeholder="ML ID ex: 12345678" class="flex-1 border-2 border-pink-200 rounded-lg p-3 font-bold">
-<input id="zone" placeholder="Zone" class="w-24 border-2 border-pink-200 rounded-lg p-3 font-bold">
-</div>
-</div>
-<div>
-<h3 class="font-black mb-2">Pili Package Boss 👇</h3>
-<div class="grid grid-cols-2 gap-2" id="packages"></div>
-</div>
-<div id="selectedBox" class="hidden bg-pink-50 border-2 border-pink-300 p-3 rounded-xl text-center font-bold"></div>
-<button onclick="orderNow()" class="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-black py-4 rounded-xl text-lg">ORDER NOW</button>
 
-<!-- CONTACT ADMIN - FB LINK MO BOSS -->
-<a href="https://www.facebook.com/share/1DegvvE2NK/" target="_blank" class="block w-full bg-[#1877F2] text-white font-black py-4 rounded-xl text-center shadow-lg">
-📩 CONTACT ADMIN FOR INQUIRIES
-</a>
-<p class="text-center text-[11px] text-gray-500">Direct FB - Mabilis Reply!</p>
+<!-- DOUBLE DIAMONDS -->
+<div class="grid grid-cols-4 gap-2 my-3">
+<button onclick="selPkg('50+50 Double','54')" class="bg-gradient-to-r from-yellow-100 to-pink-300 rounded-lg p-2 font-black border-2 border-white">50+50<br><span class="text-blue-800">₱54</span></button>
+<button onclick="selPkg('150+150 Double','158')" class="bg-gradient-to-r from-yellow-100 to-pink-300 rounded-lg p-2 font-black border-2 border-white">150+150<br><span class="text-blue-800">₱158</span></button>
+<button onclick="selPkg('250+250 Double','268')" class="bg-gradient-to-r from-yellow-100 to-pink-300 rounded-lg p-2 font-black border-2 border-white">250+250<br><span class="text-blue-800">₱268</span></button>
+<button onclick="selPkg('500+500 Double','540')" class="bg-gradient-to-r from-yellow-100 to-pink-300 rounded-lg p-2 font-black border-2 border-white">500+500<br><span class="text-blue-800">₱540</span></button>
+</div>
+
+<!-- ALL DIAMONDS -->
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2" id="grid"></div>
+
+<!-- SPECIALS -->
+<div class="grid grid-cols-3 md:grid-cols-6 gap-2 mt-3">
+<button onclick="selPkg('Weekly Elite Bundle','55')" class="bg-purple-200 rounded-lg p-2 font-black">WEEKLY<br>₱55</button>
+<button onclick="selPkg('Chest','110')" class="bg-purple-200 rounded-lg p-2 font-black">CHEST<br>₱110</button>
+<button onclick="selPkg('Starlight','140')" class="bg-purple-200 rounded-lg p-2 font-black">STARLIGHT<br>₱140</button>
+<button onclick="selPkg('Monthly Epic','270')" class="bg-purple-200 rounded-lg p-2 font-black">MONTHLY<br>₱270</button>
+<button onclick="selPkg('Starlight Premium','290')" class="bg-purple-200 rounded-lg p-2 font-black">PREMIUM<br>₱290</button>
+<button onclick="selPkg('Twilight Pass','536')" class="bg-purple-200 rounded-lg p-2 font-black">TWILIGHT<br>₱536</button>
+</div>
+
+<!-- FORM -->
+<div class="bg-white rounded-xl p-4 mt-4">
+<div class="flex gap-2 mb-3">
+<input id="mlid" placeholder="ML ID" class="flex-1 border-2 border-purple-300 rounded-lg p-3 font-bold text-center">
+<input id="zone" placeholder="Zone" class="w-28 border-2 border-purple-300 rounded-lg p-3 font-bold text-center">
+</div>
+<div id="selBox" class="hidden bg-yellow-100 border-2 border-yellow-400 p-3 rounded-lg text-center font-black mb-3"></div>
+<button onclick="order()" class="w-full bg-gradient-to-r from-yellow-400 to-orange-500 font-black py-4 rounded-xl text-lg">ORDER NOW - <span id="priceShow">Pili ka muna</span></button>
+<a href="https://www.facebook.com/share/1DegvvE2NK/" target="_blank" class="block w-full bg-[#1877F2] text-white font-black py-4 rounded-xl text-center mt-3">📩 CONTACT ADMIN FOR INQUIRIES</a>
+<div class="mt-3 bg-gray-100 p-2 rounded-lg text-center"><p class="font-black text-xs">MODE OF PAYMENT: GCash | BDO | MariBank | CIMB</p></div>
 </div>
 </div>
 <script>
-const pkgs=[
-{ d:86, p:65 }, { d:172, p:130 }, { d:257, p:195 }, { d:344, p:260 },
-{ d:429, p:325 }, { d:514, p:390 }, { d:600, p:455 }, { d:706, p:535 },
-{ d:1412, p:1070 }, { d:2195, p:1605 }
+const data=[
+[11,11],[22,22],[56,54],[86,65],[112,107],[168,161],[172,130],[223,215],[257,195],[279,269],
+[336,323],[344,260],[429,325],[448,430],[514,390],[570,538],[600,455],[626,591],[682,645],[706,535],
+[738,699],[849,806],[906,861],[1018,968],[1163,1077],[1412,1070],[1733,1615],[2195,1605],[2398,2152],
+[3561,3229],[5132,4628],[6042,5382],[7205,6459],[8440,7535],[9010,8072],[10173,9149],[12084,10764],[20524,18299]
 ];
-let sel=null;
-const box=document.getElementById('packages');
-pkgs.forEach(x=>{
-box.innerHTML+=`<button onclick="selectPkg(${x.d},${x.p})" class="border-2 border-gray-200 rounded-xl p-3 text-left hover:border-pink-400"><div class="font-black text-pink-600">${x.d} 💎</div><div class="font-bold">₱${x.p}</div></button>`;
+let cur=null;
+const grid=document.getElementById('grid');
+data.forEach(([d,p])=>{
+grid.innerHTML+=`<button onclick="selPkg('${d}','${p}')" class="bg-gradient-to-r from-[#fff8dc] to-[#c48cb8] rounded-lg p-2.5 flex justify-between font-black border border-white shadow hover:scale-105 transition"><span>${d} 💎</span><span class="text-blue-800">₱${p}</span></button>`;
 });
-function selectPkg(d,p){ sel={d,p}; document.getElementById('selectedBox').classList.remove('hidden'); document.getElementById('selectedBox').innerHTML=`Selected: ${d} Diamonds - ₱${p}`; }
-async function orderNow(){
-const id=document.getElementById('mlid').value;
-const zone=document.getElementById('zone').value;
-if(!id||!zone||!sel){ alert('Boss lagay mo ID, Zone at package!'); return; }
-// Dito papasok Nexone API mo - naka-save na sa Vercel!
-alert(`Order Received Boss!\nID: ${id} (${zone})\n${sel.d} Diamonds - ₱${sel.p}\n\nNa-save na! PM ka sa CONTACT ADMIN para ma-process agad!`);
-window.open('https://www.facebook.com/share/1DegvvE2NK/','_blank');
-}
+function selPkg(d,p){cur={d,p};document.getElementById('selBox').classList.remove('hidden');document.getElementById('selBox').innerText=`SELECTED: ${d} - ₱${p}`;document.getElementById('priceShow').innerText=`₱${p} - ${d}`;}
+function order(){const id=document.getElementById('mlid').value;const zone=document.getElementById('zone').value;if(!id||!zone||!cur){alert('Boss lagay mo ID, Zone at package!');return;}alert(`✅ ORDER: ${cur.d} - ₱${cur.p}\nID: ${id} (${zone})`);window.open('https://www.facebook.com/share/1DegvvE2NK/','_blank');fetch('/api/order',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ml_id:id,zone_id:zone,diamonds:cur.d,price:cur.p})}).catch(()=>{});}
 </script>
-</body>
-</html>
+</body></html>
