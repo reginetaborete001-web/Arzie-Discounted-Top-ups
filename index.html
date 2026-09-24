@@ -1,86 +1,23 @@
 <!DOCTYPE html>
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ARZIE DISCOUNTED TOP-UPS - MLBB PH</title>
+<title>ARZIE DISCOUNTED TOP-UPS</title>
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#0a0e27] min-h-screen p-2">
-<div class="max-w-6xl mx-auto">
+<div class="max-w-6xl mx-auto" id="mainSite">
 <div class="bg-gradient-to-r from-yellow-400 via-purple-600 to-blue-600 p-4 rounded-t-xl text-center border-4 border-white">
-<h1 class="text-white font-black text-2xl tracking-wide">MLBB PH SERVER</h1>
-<p class="text-yellow-200 font-bold tracking-wider">ARZIE DISCOUNTED TOP-UPS</p>
+<h1 class="text-white font-black text-2xl">MLBB PH SERVER</h1>
+<p class="text-yellow-200 font-bold">ARZIE DISCOUNTED TOP-UPS</p>
 </div>
 
-<!-- TOP: ALL PASSES -->
-<div class="mt-4">
-<p class="text-white font-bold text-xs tracking-widest mb-2 opacity-70">PASSES & BUNDLES</p>
+<div class="mt-4"><p class="text-white font-bold text-xs tracking-widest mb-2 opacity-70">PASSES & BUNDLES</p>
 <div class="grid grid-cols-2 gap-2">
 <button onclick="selPkg('Twilight Pass','536')" class="bg-gradient-to-r from-[#fff8dc] to-[#c48cb8] rounded-lg p-3 font-bold border border-white flex justify-between text-sm"><span>Twilight Pass</span><span class="text-blue-800">₱536</span></button>
 <button onclick="selPkg('Weekly Diamond Pass','110')" class="bg-gradient-to-r from-[#fff8dc] to-[#c48cb8] rounded-lg p-3 font-bold border border-white flex justify-between text-sm"><span>Weekly Diamond Pass</span><span class="text-blue-800">₱110</span></button>
 <button onclick="selPkg('Weekly Elite Bundle','55')" class="bg-gradient-to-r from-[#fff8dc] to-[#c48cb8] rounded-lg p-3 font-bold border border-white flex justify-between text-sm"><span>Weekly Elite Bundle</span><span class="text-blue-800">₱55</span></button>
 <button onclick="selPkg('Monthly Epic Bundle','270')" class="bg-gradient-to-r from-[#fff8dc] to-[#c48cb8] rounded-lg p-3 font-bold border border-white flex justify-between text-sm"><span>Monthly Epic Bundle</span><span class="text-blue-800">₱270</span></button>
-<button onclick="selPkg('Premium Starlight Bundle','290')" class="col-span-2 bg-gradient-to-r from-[#fff8dc] to-[#c48cb8] rounded-lg p-3 font-bold border border-white flex justify-between text-sm"><span>Premium Starlight Bundle</span><span class="text-blue-800">₱290</span></button>
-</div>
-</div>
+</div></div>
 
-<!-- MIDDLE: DOUBLE DIAMONDS -->
-<div class="mt-4">
-<p class="text-white font-bold text-xs tracking-widest mb-2 opacity-70">DOUBLE DIAMONDS</p>
+<div class="mt-4"><p class="text-white font-bold text-xs tracking-widest mb-2 opacity-70">DOUBLE DIAMONDS</p>
 <div class="grid grid-cols-4 gap-2">
-<button onclick="selPkg('50+50 Double','54')" class="bg-gradient-to-r from-yellow-100 to-pink-300 rounded-lg p-2 font-bold border border-white text-sm">50+50<br><span class="text-blue-800">₱54</span></button>
-<button onclick="selPkg('150+150 Double','158')" class="bg-gradient-to-r from-yellow-100 to-pink-300 rounded-lg p-2 font-bold border border-white text-sm">150+150<br><span class="text-blue-800">₱158</span></button>
-<button onclick="selPkg('250+250 Double','268')" class="bg-gradient-to-r from-yellow-100 to-pink-300 rounded-lg p-2 font-bold border border-white text-sm">250+250<br><span class="text-blue-800">₱268</span></button>
-<button onclick="selPkg('500+500 Double','540')" class="bg-gradient-to-r from-yellow-100 to-pink-300 rounded-lg p-2 font-bold border border-white text-sm">500+500<br><span class="text-blue-800">₱540</span></button>
-</div>
-</div>
-
-<!-- MAIN: DIAMONDS -->
-<div class="mt-4">
-<p class="text-white font-bold text-xs tracking-widest mb-2 opacity-70">DIAMONDS - LEGIT DISCOUNTED</p>
-<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2" id="grid"></div>
-</div>
-
-<!-- STARLIGHT MANUAL - PINAKA ILALIM -->
-<div class="mt-6 bg-white border-2 border-yellow-400 rounded-xl p-4">
-<h3 class="font-black text-center text-sm tracking-wide">STARLIGHT - MANUAL PROCESS</h3>
-<div class="grid grid-cols-2 gap-2 mt-3">
-<button onclick="goFB('Starlight Member')" class="bg-[#f3e8ff] border-2 border-purple-300 rounded-lg p-3 font-bold text-sm">Starlight Member<br><span class="text-blue-800">₱140</span></button>
-<button onclick="goFB('Starlight Premium')" class="bg-[#f3e8ff] border-2 border-purple-300 rounded-lg p-3 font-bold text-sm">Starlight Premium<br><span class="text-blue-800">₱290</span></button>
-</div>
-<div class="mt-3 bg-[#fef9c3] border border-amber-300 rounded-lg p-3 text-center">
-<p class="font-black text-[11px]">NOTE:</p>
-<p class="text-[11px] mt-1 leading-tight">1-4 days waiting for the gifter<br>8-10 days in-game friends requirement</p>
-<p class="font-bold text-[11px] mt-2">Contact admin for details and inquiries</p>
-<a href="https://www.facebook.com/share/1DegvvE2NK/" target="_blank" class="mt-2 block bg-[#1877F2] text-white font-bold py-2.5 rounded-lg text-xs">CONTACT ADMIN</a>
-</div>
-</div>
-
-<!-- ORDER FORM - FORMAL -->
-<div class="bg-white rounded-xl p-4 mt-6">
-<div class="flex gap-2 mb-3">
-<input id="mlid" placeholder="ML User ID" class="flex-1 border-2 border-purple-200 rounded-lg p-3.5 text-center font-bold outline-none focus:border-purple-400">
-<input id="zone" placeholder="Zone ID" class="w-28 border-2 border-purple-200 rounded-lg p-3.5 text-center font-bold outline-none focus:border-purple-400">
-</div>
-<div id="selBox" class="hidden bg-purple-50 border-2 border-purple-300 p-3 rounded-lg text-center font-bold text-sm mb-3"></div>
-<button onclick="order()" class="w-full bg-gradient-to-r from-yellow-400 to-orange-500 font-black py-4 rounded-xl text-base tracking-wide">ORDER NOW</button>
-<a href="https://www.facebook.com/share/1DegvvE2NK/" target="_blank" class="block w-full bg-[#1877F2] text-white font-bold py-4 rounded-xl text-center mt-3 text-sm tracking-wide">CONTACT ADMIN FOR INQUIRIES</a>
-<div class="mt-3 bg-gray-50 p-2.5 rounded-lg text-center"><p class="font-bold text-[11px] tracking-wide">MODE OF PAYMENT: GCash | BDO | MariBank | CIMB</p></div>
-</div>
-</div>
-
-<script>
-const data=[
-[11,11],[22,22],[56,54],[86,65],[112,107],[168,161],[172,130],[223,215],[257,195],[279,269],
-[336,323],[344,260],[429,325],[448,430],[514,390],[570,538],[600,455],[626,591],[682,645],[706,535],
-[738,699],[849,806],[906,861],[1018,968],[1163,1077],[1412,1070],[1733,1615],[2195,1605],[2398,2152],
-[3561,3229],[5132,4628],[6042,5382],[7205,6459],[8440,7535],[9010,8072],[10173,9149],[12084,10764],[20524,18299]
-];
-let cur=null;
-const grid=document.getElementById('grid');
-data.forEach(([d,p])=>{
-grid.innerHTML+=`<button onclick="selPkg('${d}','${p}')" class="bg-gradient-to-r from-[#fff8dc] to-[#c48cb8] rounded-lg p-2.5 flex justify-between font-bold text-sm border border-white shadow"><span>${d} 💎</span><span class="text-blue-800">₱${p}</span></button>`;
-});
-function selPkg(d,p){cur={d,p};const b=document.getElementById('selBox');b.classList.remove('hidden');b.innerText=`Selected: ${d} - ₱${p}`;}
-function goFB(item){window.open('https://www.facebook.com/share/1DegvvE2NK/','_blank');}
-function order(){const id=document.getElementById('mlid').value;const zone=document.getElementById('zone').value;if(!id||!zone||!cur){alert('Please enter ML ID, Zone ID and select a package.');return;}alert(`Order Received: ${cur.d} - ₱${cur.p}\nID: ${id} (${zone})\n\nPlease contact admin via Facebook to confirm.`);window.open('https://www.facebook.com/share/1DegvvE2NK/','_blank');fetch('/api/order',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ml_id:id,zone_id:zone,diamonds:cur.d,price:cur.p})}).catch(()=>{});}
-</script>
-</body></html>
+<button onclick="selPkg('50+50 Double','54')" class="bg-gradient-to-r from-yellow-100 to-pink-300 rounded-lg p-2 font-bold border border-white text-sm">50
