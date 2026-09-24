@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ARZIE DISCOUNTED TOP-UPS</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body style="background:#0f0a2a;color:white" class="p-3">
+<div class="max-w-md mx-auto text-center">
+<div class="border-2 border-yellow-400 rounded-xl p-4 mb-4">
+<h1 class="text-xl font-black text-yellow-300">ARZIE DISCOUNTED TOP-UPS</h1>
+<p class="text-xs text-purple-300">FAST • SECURE • 24/7 • PH SERVER</p>
+</div>
+<div id="grid" class="grid grid-cols-2 gap-2 text-center"></div>
+<div class="mt-6 p-3 bg-black/40 rounded-xl">
+<p class="text-yellow-300 font-bold">GCash / Maya / Bank Transfer</p>
+<p class="text-xs text-gray-400">DM us after payment</p>
+</div>
+</div>
+<div id="modal" class="hidden fixed inset-0 bg-black/80 p-6 flex items-center justify-center">
+<div class="bg-[#1a1440] p-5 rounded-xl w-full max-w-sm border border-yellow-400">
+<h2 id="mTitle" class="font-bold text-yellow-300"></h2>
+<input id="uid" placeholder="User ID" class="w-full mt-3 p-3 rounded bg-black border border-purple-500">
+<input id="zone" placeholder="Zone ID" class="w-full mt-2 p-3 rounded bg-black border border-purple-500">
+<button onclick="orderNow()" class="w-full mt-4 bg-yellow-400 text-black font-black py-3 rounded">ORDER VIA FB</button>
+<button onclick="document.getElementById('modal').classList.add('hidden')" class="w-full mt-2 text-gray-400 text-sm">Cancel</button>
+</div>
+</div>
+<script>
+const items=[[11,11],[22,22],[56,54],[112,107],[168,161],[223,215],[279,269],[336,323],[448,430],[570,538],[626,591],[682,645],[738,699],[849,806],[906,861],[1018,968],[1163,1077],[1733,1615],[2398,2152],[3561,3229],[5132,4628],[6042,5382],[7205,6459],[8440,7535],[9010,8072],[10173,9149],[12084,10764],[20524,18299],["50+50",54],["150+150",158],["250+250",268],["500+500",540],["Weekly",55],["Monthly",270],["Starlight",140],["Premium",290]];
+let sel=null;const g=document.getElementById('grid');
+items.forEach(i=>{const d=document.createElement('div');d.className='p-3 rounded-xl bg-gradient-to-br from-[#1a1440] to-[#0f0a2a] border border-purple-500/30';d.innerHTML=`<div class='font-black'>${i[0]} 💎</div><div class='text-yellow-300 font-bold'>₱${i[1]}</div>`;d.onclick=()=>{sel=i;document.getElementById('mTitle').innerText=i[0]+' Diamonds - ₱'+i[1];document.getElementById('modal').classList.remove('hidden')};g.appendChild(d)});
+function orderNow(){const u=document.getElementById('uid').value,z=document.getElementById('zone').value;if(!u||!z)return alert('Lagay ID muna');const m=`ORDER ARZIE%0A${sel[0]} - ₱${sel[1]}%0AUID:${u} Zone:${z}`;window.open(`https://m.me/ArzieTopUps?text=${m}`,'_blank');}
+</script>
+</body>
+</html>
