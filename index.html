@@ -2,88 +2,26 @@
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>ARZIE DISCOUNTED TOP-UPS</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<style>.selected{border:3px solid red!important;box-shadow:0 0 12px red!important;}.pay-selected{border:3px solid red!important;background:#007DFE!important;color:white!important;}</style>
+<style>
+.pkg{transition:all 0.15s;}
+.pkg.selected{border:3px solid red!important; box-shadow:0 0 0 3px red!important; background:#ffd6d6!important; transform:scale(0.97);}
+.payBtn.selected{border:3px solid red!important; background:#007DFE!important; color:white!important; box-shadow:0 0 0 2px red!important;}
+</style>
 </head>
 <body class="bg-[#0a0e27] min-h-screen p-2">
 <div class="max-w-6xl mx-auto">
 <div class="bg-gradient-to-r from-yellow-400 via-purple-600 to-blue-600 p-4 rounded-t-xl text-center border-4 border-white">
 <h1 class="text-white font-black text-2xl">MLBB PH SERVER</h1><p class="text-yellow-200 font-bold">ARZIE DISCOUNTED TOP-UPS</p></div>
 
-<div class="mt-4"><p class="text-white font-bold text-xs mb-2 opacity-70">PASSES & BUNDLES</p>
-<div class="grid grid-cols-2 gap-2">
+<div class="mt-4"><p class="text-white font-bold text-xs mb-2 opacity-70">PASSES & BUNDLES</p><div class="grid grid-cols-2 gap-2">
 <button onclick="selPkg(this,'Twilight Pass',536)" class="pkg bg-[#fff8dc] rounded-lg p-3 font-bold border-2 flex justify-between text-sm"><span>Twilight Pass</span><span class="text-blue-800">₱536</span></button>
 <button onclick="selPkg(this,'Weekly Diamond Pass',110)" class="pkg bg-[#fff8dc] rounded-lg p-3 font-bold border-2 flex justify-between text-sm"><span>Weekly Pass</span><span class="text-blue-800">₱110</span></button>
-<button onclick="selPkg(this,'Weekly Elite Bundle',55)" class="pkg bg-[#fff8dc] rounded-lg p-3 font-bold border-2 flex justify-between text-sm"><span>Weekly Elite Bundle</span><span class="text-blue-800">₱55</span></button>
-<button onclick="selPkg(this,'Monthly Epic Bundle',270)" class="pkg bg-[#fff8dc] rounded-lg p-3 font-bold border-2 flex justify-between text-sm"><span>Monthly Epic Bundle</span><span class="text-blue-800">₱270</span></button>
+<button onclick="selPkg(this,'Weekly Elite Bundle',55)" class="pkg bg-[#fff8dc] rounded-lg p-3 font-bold border-2 flex justify-between text-sm"><span>Weekly Elite</span><span class="text-blue-800">₱55</span></button>
+<button onclick="selPkg(this,'Monthly Epic Bundle',270)" class="pkg bg-[#fff8dc] rounded-lg p-3 font-bold border-2 flex justify-between text-sm"><span>Monthly Epic</span><span class="text-blue-800">₱270</span></button>
 </div></div>
 
-<div class="mt-4"><p class="text-white font-bold text-xs mb-2 opacity-70">DOUBLE DIAMONDS</p>
-<div class="grid grid-cols-2 gap-2">
+<div class="mt-4"><p class="text-white font-bold text-xs mb-2 opacity-70">DOUBLE DIAMONDS</p><div class="grid grid-cols-2 gap-2">
 <button onclick="selPkg(this,'50+50 Double',54)" class="pkg bg-yellow-100 rounded-lg p-3 font-bold border-2 flex justify-between text-sm"><span>50+50</span><span class="text-blue-800">₱54</span></button>
 <button onclick="selPkg(this,'150+150 Double',158)" class="pkg bg-yellow-100 rounded-lg p-3 font-bold border-2 flex justify-between text-sm"><span>150+150</span><span class="text-blue-800">₱158</span></button>
 <button onclick="selPkg(this,'250+250 Double',268)" class="pkg bg-yellow-100 rounded-lg p-3 font-bold border-2 flex justify-between text-sm"><span>250+250</span><span class="text-blue-800">₱268</span></button>
-<button onclick="selPkg(this,'500+500 Double',540)" class="pkg bg-yellow-100 rounded-lg p-3 font-bold border-2 flex justify-between text-sm"><span>500+500</span><span class="text-blue-800">₱540</span></button>
-</div></div>
-
-<div class="mt-4"><p class="text-white font-bold text-xs mb-2 opacity-70">DIAMONDS - LEGIT DISCOUNTED (38 DENOMS)</p>
-<div class="grid grid-cols-2 gap-2">
-<button onclick="selPkg(this,'11 Diamonds',11)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>11 💎</span><span class="text-blue-800">₱11</span></button>
-<button onclick="selPkg(this,'22 Diamonds',22)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>22 💎</span><span class="text-blue-800">₱22</span></button>
-<button onclick="selPkg(this,'56 Diamonds',54)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>56 💎</span><span class="text-blue-800">₱54</span></button>
-<button onclick="selPkg(this,'86 Diamonds',65)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>86 💎</span><span class="text-blue-800">₱65</span></button>
-<button onclick="selPkg(this,'112 Diamonds',107)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>112 💎</span><span class="text-blue-800">₱107</span></button>
-<button onclick="selPkg(this,'168 Diamonds',161)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>168 💎</span><span class="text-blue-800">₱161</span></button>
-<button onclick="selPkg(this,'172 Diamonds',130)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>172 💎</span><span class="text-blue-800">₱130</span></button>
-<button onclick="selPkg(this,'223 Diamonds',215)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>223 💎</span><span class="text-blue-800">₱215</span></button>
-<button onclick="selPkg(this,'257 Diamonds',195)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>257 💎</span><span class="text-blue-800">₱195</span></button>
-<button onclick="selPkg(this,'279 Diamonds',269)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>279 💎</span><span class="text-blue-800">₱269</span></button>
-<button onclick="selPkg(this,'336 Diamonds',323)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>336 💎</span><span class="text-blue-800">₱323</span></button>
-<button onclick="selPkg(this,'344 Diamonds',260)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>344 💎</span><span class="text-blue-800">₱260</span></button>
-<button onclick="selPkg(this,'429 Diamonds',325)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>429 💎</span><span class="text-blue-800">₱325</span></button>
-<button onclick="selPkg(this,'448 Diamonds',430)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>448 💎</span><span class="text-blue-800">₱430</span></button>
-<button onclick="selPkg(this,'514 Diamonds',390)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>514 💎</span><span class="text-blue-800">₱390</span></button>
-<button onclick="selPkg(this,'570 Diamonds',538)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>570 💎</span><span class="text-blue-800">₱538</span></button>
-<button onclick="selPkg(this,'600 Diamonds',455)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>600 💎</span><span class="text-blue-800">₱455</span></button>
-<button onclick="selPkg(this,'626 Diamonds',591)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>626 💎</span><span class="text-blue-800">₱591</span></button>
-<button onclick="selPkg(this,'682 Diamonds',645)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>682 💎</span><span class="text-blue-800">₱645</span></button>
-<button onclick="selPkg(this,'706 Diamonds',535)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>706 💎</span><span class="text-blue-800">₱535</span></button>
-<button onclick="selPkg(this,'738 Diamonds',699)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>738 💎</span><span class="text-blue-800">₱699</span></button>
-<button onclick="selPkg(this,'849 Diamonds',806)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>849 💎</span><span class="text-blue-800">₱806</span></button>
-<button onclick="selPkg(this,'906 Diamonds',861)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>906 💎</span><span class="text-blue-800">₱861</span></button>
-<button onclick="selPkg(this,'1018 Diamonds',968)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>1018 💎</span><span class="text-blue-800">₱968</span></button>
-<button onclick="selPkg(this,'1163 Diamonds',1077)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>1163 💎</span><span class="text-blue-800">₱1077</span></button>
-<button onclick="selPkg(this,'1412 Diamonds',1070)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>1412 💎</span><span class="text-blue-800">₱1070</span></button>
-<button onclick="selPkg(this,'1733 Diamonds',1615)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>1733 💎</span><span class="text-blue-800">₱1615</span></button>
-<button onclick="selPkg(this,'2195 Diamonds',1605)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>2195 💎</span><span class="text-blue-800">₱1605</span></button>
-<button onclick="selPkg(this,'2398 Diamonds',2152)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>2398 💎</span><span class="text-blue-800">₱2152</span></button>
-<button onclick="selPkg(this,'3561 Diamonds',3229)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>3561 💎</span><span class="text-blue-800">₱3229</span></button>
-<button onclick="selPkg(this,'5132 Diamonds',4628)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>5132 💎</span><span class="text-blue-800">₱4628</span></button>
-<button onclick="selPkg(this,'6042 Diamonds',5382)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>6042 💎</span><span class="text-blue-800">₱5382</span></button>
-<button onclick="selPkg(this,'7205 Diamonds',6459)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>7205 💎</span><span class="text-blue-800">₱6459</span></button>
-<button onclick="selPkg(this,'8440 Diamonds',7535)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>8440 💎</span><span class="text-blue-800">₱7535</span></button>
-<button onclick="selPkg(this,'9010 Diamonds',8072)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>9010 💎</span><span class="text-blue-800">₱8072</span></button>
-<button onclick="selPkg(this,'10173 Diamonds',9149)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>10173 💎</span><span class="text-blue-800">₱9149</span></button>
-<button onclick="selPkg(this,'12084 Diamonds',10764)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>12084 💎</span><span class="text-blue-800">₱10764</span></button>
-<button onclick="selPkg(this,'20524 Diamonds',18299)" class="pkg bg-[#fff8dc] rounded-lg p-2.5 flex justify-between font-bold text-sm border-2"><span>20524 💎</span><span class="text-blue-800">₱18299</span></button>
-</div></div>
-
-<div class="mt-6 bg-white border-2 border-yellow-400 rounded-xl p-4">
-<h3 class="font-black text-center text-sm">STARLIGHT - MANUAL PROCESS</h3>
-<div class="grid grid-cols-2 gap-2 mt-3">
-<button onclick="selPkg(this,'Normal Starlight',145)" class="pkg bg-[#f3e8ff] border-2 border-purple-300 rounded-lg p-3 font-bold text-sm">Normal Starlight<br><span class="text-blue-800">₱145</span></button>
-<button onclick="selPkg(this,'Premium Starlight',295)" class="pkg bg-[#f3e8ff] border-2 border-purple-300 rounded-lg p-3 font-bold text-sm">Premium Starlight<br><span class="text-blue-800">₱295</span></button>
-</div></div>
-
-<div class="bg-white rounded-xl p-4 mt-6">
-<div class="grid grid-cols-2 gap-2 mb-2">
-<input id="mlid" oninput="checkIGN()" placeholder="ML User ID" class="border-2 border-purple-200 rounded-lg p-3 text-center font-bold">
-<input id="zone" oninput="checkIGN()" placeholder="Zone ID / Server" class="border-2 border-purple-200 rounded-lg p-3 text-center font-bold">
-</div>
-<div id="ignBox" class="hidden border-2 rounded-lg p-3 text-center mb-3"><p id="ignName" class="font-black">-</p><p id="ignStatus" class="text-[10px]"></p></div>
-<div class="flex gap-2 items-center mb-3 bg-gray-50 p-3 rounded-lg"><label class="font-bold text-xs">Qty:</label><input id="qty" type="number" value="1" min="1" class="w-16 border-2 rounded-lg p-2 text-center font-bold"><div id="selBox" class="flex-1 bg-purple-50 border p-2 rounded-lg text-center font-bold text-[11px]">Select package</div></div>
-<div class="mb-3 bg-yellow-50 border-2 border-yellow-400 rounded-xl p-3"><p class="font-black text-xs mb-2">💳 MODE OF PAYMENT - Select one:</p><div class="grid grid-cols-3 gap-2"><button onclick="selPay('GCash')" id="payGCash" class="payBtn bg-white border-2 rounded-lg p-2.5 font-bold text-[11px]">GCash</button><button onclick="selPay('Maya')" id="payMaya" class="payBtn bg-white border-2 rounded-lg p-2.5 font-bold text-[11px]">Maya</button><button onclick="selPay('CIMB')" id="payCIMB" class="payBtn bg-white border-2 rounded-lg p-2.5 font-bold text-[11px]">CIMB</button><button onclick="selPay('BDO')" id="payBDO" class="payBtn bg-white border-2 rounded-lg p-2.5 font-bold text-[11px]">BDO</button><button onclick="selPay('MariBank')" id="payMariBank" class="payBtn bg-white border-2 rounded-lg p-2.5 font-bold text-[11px]">MariBank</button></div><p id="paySelectedText" class="mt-2 text-center font-black text-[11px] text-blue-700">Selected: GCash</p></div>
-<button onclick="confirmOrder()" class="w-full bg-gradient-to-r from-yellow-400 to-orange-500 font-black py-4 rounded-xl">CONFIRM & PAY ₱<span id="totalDisplay">0</span> via <span id="payDisplay">GCash</span></button>
-</div></div>
-
-<div id="confirmModal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"><div class="bg-white rounded-2xl p-6 max-w-sm w-full"><h3 class="font-black text-center">CONFIRM ORDER</h3><div id="confirmDetails" class="mt-4 bg-gray-100 rounded-lg p-3 text-sm font-mono leading-6"></div><div class="flex gap-2 mt-4"><button onclick="document.getElementById('confirmModal').classList.add('hidden')" class="flex-1 bg-gray-200 font-bold py-3 rounded-xl">Cancel</button><button onclick="payNow()" class="flex-1 bg-green-600 text-white font-black py-3 rounded-xl">PAY NOW</button></div></div></div>
-<div id="receiptPage" class="hidden fixed inset-0 bg-[#0a0e27] z-50 p-4 overflow-auto"><div class="max-w-md mx-auto bg-white rounded-2xl p-6 mt-10 text-center"><div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto text-white text-3xl font-black">✓</div><h2 class="font-black text-xl mt-4 text-green-600">PAYMENT INITIATED</h2><div id="receiptDetails" class="mt-6 bg-gray-50 rounded-xl p-4 text-left font-mono text-sm leading-7 border"></div><div class="mt-4 space-y-2"><button onclick="openPayApp()" class="w-full bg-[#007DFE] text-white font-black py-3 rounded-xl">Open <span id="receiptPay">GCash</span> App</button
+<button onclick="selPkg(this,'500+500 Double',540)" class="pkg bg-yellow-100 rounded-lg p-3 font-bold border-2 flex justify-between text-sm"><span>500+500
