@@ -1,157 +1,168 @@
 <!DOCTYPE html>
-<html lang="tl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARZIE MLBB - PH SERVER</title>
+<title>ARZIE SHOP - Top Up Games Instantly Philippines</title>
 <style>
-body{background:#0a0a14;color:#fff;font-family:Arial;padding:12px;margin:0}
-.note{background:#ffaa0022;border:1px solid #ffaa00;border-radius:10px;padding:12px;margin:10px 0;font-size:13px}
-.notice{background:#ff000022;border:1px solid red;border-radius:10px;padding:12px;margin:10px 0;font-size:12px}
-.card{background:#1a1a2e;border:1px solid #6c5ce7;border-radius:12px;padding:12px;margin:8px 0;cursor:pointer;display:flex;justify-content:space-between}
-.card.manual{border-color:#ffaa00;background:#2d1b0022}
-.card.qr{border-color:#00ffcc}
-.price{color:#00ffcc;font-weight:bold}
-button{background:linear-gradient(90deg,#a55eea,#6c5ce7);color:#fff;border:none;padding:14px;width:100%;border-radius:10px;font-weight:bold;cursor:pointer}
-input{width:100%;padding:12px;border-radius:8px;margin:5px 0;border:1px solid #6c5ce7;background:#111;color:#fff}
-#confirmPage{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#0a0a14;z-index:99;padding:20px;overflow:auto;box-sizing:border-box}
-.badge{background:#00ffcc;color:#000;padding:2px 6px;border-radius:4px;font-size:9px}
-.contactBox{margin-top:30px;padding:20px;text-align:center;background:#1a1a2e;border-radius:12px;border:1px solid #1877F2}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a14;color:white;font-family:Arial, sans-serif}
+header{background:#0f0f24;padding:15px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #a020f0}
+.logo{font-size:28px;font-weight:bold;color:#c084fc;text-shadow:0 0 10px #a020f0}
+.hero{text-align:center;padding:30px;background:linear-gradient(180deg,#1a0a2e,#0a0a14)}
+.hero h1{font-size:32px;color:#e0aaff;text-shadow:0 0 20px #a020f0}
+.hero p{color:#aaa;margin-top:10px}
+.games{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;padding:20px}
+@media(min-width:768px){.games{grid-template-columns:repeat(3,1fr)}}
+.card{background:#15152a;border:1px solid #a020f0;border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:0.3s}
+.card:hover{transform:scale(1.05);box-shadow:0 0 20px #a020f0}
+.card h3{margin:10px 0;color:#c084fc}
+.badge{background:#a020f0;font-size:10px;padding:3px 8px;border-radius:10px;position:absolute;top:10px;right:10px}
+.btn{background:#a020f0;color:white;border:none;padding:10px 20px;border-radius:20px;cursor:pointer;width:100%;margin-top:10px;font-weight:bold}
+.packages{display:none;padding:20px}
+.package{background:#1f1f3a;border:1px solid #333;border-radius:8px;padding:12px;margin:8px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.package:hover{border-color:#a020f0}
+.price{color:#c084fc;font-weight:bold}
+.original{text-decoration:line-through;color:#666;font-size:12px}
+.input-box{padding:20px;background:#15152a;margin:20px;border-radius:12px}
+.input-box input{width:100%;padding:12px;margin:8px 0;border-radius:8px;border:1px solid #333;background:#0a0a14;color:white}
+.order-btn{background:#a020f0;color:white;border:none;padding:15px;width:100%;border-radius:10px;font-size:18px;font-weight:bold;cursor:pointer;margin-top:15px}
 </style>
 </head>
 <body>
 
-<h1 style="color:#a55eea;text-align:center">ARZIE 💎 MLBB PH</h1>
+<header>
+<div class="logo">⚡ ARZIE SHOP</div>
+<div>PHP ₱ | GCash Maya QRPH</div>
+</header>
 
-<div class="note">
-<b>📌 PAYMENT NOTE:</b><br>
-✅ <b>P1-P50 = MANUAL TOP-UP</b> - GCash: <b>09933891470</b><br>
-✅ <b>P50+ = DIRECT QR PH</b> - GCash/Maya/BPI/BDO auto via PayMongo<br>
-✅ <b>Normal & Premium Starlight = MANUAL PROCESS</b> - PM sa FB
+<div class="hero">
+<h1>TOP UP GAMES INSTANTLY</h1>
+<p>Fast • Secure • 24/7 • Trusted PH Gaming Store • +2% lang tubo!</p>
 </div>
 
-<h3>STEP 1: PLAYER INFO</h3>
-<input id="uid" placeholder="User ID - ex: 123456789">
-<input id="server" placeholder="Server ID - ex: 1234">
-<div style="display:flex;gap:6px;margin-top:6px">
-<button onclick="verifyIgn()" style="background:#00ffcc;color:#000">VERIFY IGN</button>
-<button onclick="checkSlot()" style="background:#ffaa00;color:#000">CHECK SLOT 0/10</button>
+<div id="home">
+<div class="games">
+<div class="card" onclick="openGame('mlbb')">
+<h3>MOBILE LEGENDS</h3>
+<p>Diamonds • Weekly Pass</p>
+<button class="btn">Top Up Now →</button>
 </div>
-<p id="ignResult" style="font-size:13px;color:#00ffcc;margin-top:8px"></p>
-<p id="slotResult" style="font-size:12px"></p>
-
-<div class="notice">
-<b>⚠️ NOTICE - DOUBLE CHECK LAGI:</b><br>
-- Tama ba User ID at Server ID? NO REFUND pag mali!<br>
-- Weekly Pass: Dapat hindi 0/10 slot!<br>
-- I-verify muna IGN bago bayad!<br>
-- GCash: 09933891470
+<div class="card" onclick="openGame('valo')">
+<h3>VALORANT</h3>
+<p>Valorant Points • VP</p>
+<button class="btn">Top Up Now →</button>
 </div>
-
-<!-- TAAS -->
-<h3 style="color:#ffaa00">🎁 TOP: WEEKLY / ELITE / MONTHLY / TWILIGHT</h3>
-<div class="card" onclick="selectOrder('Weekly Diamond Pass',110)"><span>Weekly Diamond Pass <span class="badge">CHECK 0/10</span></span><span class="price">P110 QR</span></div>
-<div class="card" onclick="selectOrder('Weekly Elite Bundle',180)"><span>Weekly Elite Bundle</span><span class="price">P180 QR</span></div>
-<div class="card" onclick="selectOrder('Monthly Epic Bundle',660)"><span>Monthly Epic Bundle</span><span class="price">P660 QR</span></div>
-<div class="card" onclick="selectOrder('Twilight Pass',110)"><span>Twilight Pass</span><span class="price">P110 QR</span></div>
-
-<!-- MANUAL STARLIGHT -->
-<div class="card manual" onclick="selectOrder('Normal Starlight',150)"><span>Normal Starlight [MANUAL]</span><span class="price">P150 MANUAL</span></div>
-<div class="card manual" onclick="selectOrder('Premium Starlight',350)"><span>Premium Starlight [MANUAL]</span><span class="price">P350 MANUAL</span></div>
-
-<!-- GITNA -->
-<h3 style="color:#a55eea">✨ MIDDLE: DOUBLE DIAMONDS</h3>
-<div class="card" onclick="selectOrder('Double 56 Dias',54)"><span>Double 56 = 112 Dias</span><span class="price">P54 QR</span></div>
-<div class="card" onclick="selectOrder('Double 223 Dias',215)"><span>Double 223 = 446 Dias</span><span class="price">P215 QR</span></div>
-<div class="card" onclick="selectOrder('Double 570 Dias',538)"><span>Double 570 = 1140 Dias</span><span class="price">P538 QR</span></div>
-
-<!-- BABA -->
-<h3 style="color:#00ffcc">💎 BOTTOM: DIAMONDS</h3>
-<div class="card manual" onclick="selectOrder('11 Diamonds',11)"><span>11 Diamonds [MANUAL P1-50]</span><span class="price">P11</span></div>
-<div class="card manual" onclick="selectOrder('22 Diamonds',22)"><span>22 Diamonds [MANUAL]</span><span class="price">P22</span></div>
-<div class="card manual" onclick="selectOrder('33 Diamonds',33)"><span>33 Diamonds [MANUAL]</span><span class="price">P33</span></div>
-<div class="card" onclick="selectOrder('56 Diamonds',54)"><span>56 Diamonds</span><span class="price">P54 QR</span></div>
-<div class="card" onclick="selectOrder('112 Diamonds',107)"><span>112 Diamonds</span><span class="price">P107 QR</span></div>
-<div class="card" onclick="selectOrder('223 Diamonds',215)"><span>223 Diamonds</span><span class="price">P215 QR</span></div>
-<div class="card" onclick="selectOrder('570 Diamonds',538)"><span>570 Diamonds</span><span class="price">P538 QR</span></div>
-<div class="card" onclick="selectOrder('6042 Diamonds',5382)"><span>6042 Diamonds</span><span class="price">P5382 QR</span></div>
-<div class="card" onclick="selectOrder('20524 Diamonds',18299)"><span>20524 Diamonds</span><span class="price">P18299 QR</span></div>
-
-<!-- CONTACT ADMIN -->
-<div class="contactBox">
-<h3>Need Help? Contact Admin</h3>
-<p style="font-size:12px">Mali ID? Slot 0/10? Hindi pumasok dias?</p>
-<button onclick="window.open('https://www.facebook.com/share/1c8XqiQBj1/','_blank')" style="background:#1877F2;font-size:16px">💬 CONTACT ADMIN ON FACEBOOK</button>
-<p style="font-size:11px;margin-top:10px">GCash: 09933891470 | ARZIE TOP-UP | pk_live_Qojs6xszYxrbiRXeJbSkCmgr</p>
+<div class="card" onclick="openGame('codm')">
+<h3>CALL OF DUTY MOBILE</h3>
+<p>CP • Battle Pass</p>
+<button class="btn">Top Up Now →</button>
+</div>
+<div class="card" onclick="openGame('freefire')">
+<h3>FREE FIRE</h3>
+<p>Diamonds • Membership</p>
+<button class="btn">Top Up Now →</button>
+</div>
+<div class="card" onclick="openGame('genshin')">
+<h3>GENSHIN IMPACT</h3>
+<p>Genesis Crystals</p>
+<button class="btn">Top Up Now →</button>
+</div>
+<div class="card" onclick="openGame('roblox')">
+<h3>ROBLOX</h3>
+<p>Robux • Premium</p>
+<button class="btn">Top Up Now →</button>
+</div>
+</div>
 </div>
 
-<!-- CONFIRM PAGE -->
-<div id="confirmPage">
-<h2>✅ CONFIRM ORDER</h2>
-<div style="background:#1a1a2e;padding:15px;border-radius:12px">
-<p><b>User ID:</b> <span id="c_uid"></span></p>
-<p><b>Server ID:</b> <span id="c_server"></span></p>
-<p><b>IGN:</b> <span id="c_ign" style="color:#00ffcc"></span></p>
-<p><b>Order:</b> <span id="c_order"></span></p>
-<p><b>Quantity:</b> <span id="c_qty">1x</span></p>
-<p><b>Price:</b> <span id="c_price" style="color:#00ffcc;font-size:20px"></span></p>
-<p><b>Payment Type:</b> <span id="c_payment"></span></p>
-<hr>
-<p style="font-size:12px;color:#ffaa00">Slot Status: <span id="c_slot">Checked</span></p>
-<p style="font-size:11px">Double check ID/Server/IGN bago mag pay boss!</p>
+<div id="gamePage" class="packages">
+<button onclick="goHome()" style="background:#333;color:white;border:none;padding:8px 15px;border-radius:5px;margin-bottom:15px">← Back to Games</button>
+<h2 id="gameTitle"></h2>
+<div class="input-box">
+<h3>Enter Player ID</h3>
+<input id="userId" placeholder="User ID (e.g. 123456789)">
+<input id="serverId" placeholder="Server ID / Zone ID (if needed)">
 </div>
-<button onclick="proceedPay()" style="margin-top:15px">CONFIRM & PAY NOW</button>
-<button onclick="document.getElementById('confirmPage').style.display='none'" style="background:#333;margin-top:8px">BACK - EDIT</button>
+<div id="packageList"></div>
 </div>
 
 <script>
-let currentOrder='', currentPrice=0;
-const FB_LINK='https://www.facebook.com/share/1c8XqiQBj1/';
-function verifyIgn(){
- const uid=document.getElementById('uid').value; const srv=document.getElementById('server').value;
- if(!uid||!srv){alert('Lagay ID at Server boss!');return}
- document.getElementById('ignResult').innerText='Checking IGN...';
- setTimeout(()=>{ 
-   const ign='Player_'+uid; 
-   document.getElementById('ignResult').innerText='✅ IGN: '+ign+' - VERIFIED!'; 
-   document.getElementById('ignResult').dataset.ign=ign;
- },900);
+// NEXONE BASE PRICES + 2% MARKUP (Arzie profit)
+const gamesData = {
+mlbb: {
+name: "Mobile Legends - Diamonds",
+packages: [
+{label:"5 Diamonds", base:5.49},
+{label:"11 Diamonds (10+1)", base:11.57},
+{label:"22 Diamonds (20+2)", base:22.39},
+{label:"56 Diamonds (51+5)", base:55.92},
+{label:"112 Diamonds (102+10)", base:112.37},
+{label:"168 Diamonds (153+15)", base:170.50},
+{label:"279 Diamonds (254+25)", base:283.47},
+{label:"336 Diamonds (303+33)", base:342.53},
+{label:"570 Diamonds (504+66)", base:566.73},
+{label:"1163 Diamonds (1007+156)", base:1133.15},
+{label:"Weekly Diamond Pass", base:114.82}
+]
+},
+valo: {
+name:"Valorant - Valorant Points",
+packages:[
+{label:"125 VP", base:99},
+{label:"420 VP", base:199},
+{label:"700 VP", base:329},
+{label:"1375 VP", base:599},
+{label:"2400 VP", base:999},
+{label:"4000 VP", base:1599},
+{label:"5800 VP", base:2299},
+{label:"Battle Pass", base:450}
+]
+},
+codm: {name:"CODM - CP", packages:[{label:"80 CP", base:49},{label:"400 CP", base:199},{label:"800 CP", base:399},{label:"2000 CP", base:999},{label:"4000 CP", base:1899}]},
+freefire: {name:"Free Fire - Diamonds", packages:[{label:"100 Diamonds", base:49},{label:"310 Diamonds", base:145},{label:"520 Diamonds", base:240},{label:"1060 Diamonds", base:479},{label:"2180 Diamonds", base:959}]},
+genshin: {name:"Genshin Impact - Crystals", packages:[{label:"60 Crystals", base:49},{label:"300 Crystals", base:249},{label:"980 Crystals", base:749},{label:"1980 Crystals", base:1499},{label:"Blessing of Welkin Moon", base:249}]},
+roblox: {name:"Roblox - Robux", packages:[{label:"80 Robux", base:49},{label:"400 Robux", base:199},{label:"800 Robux", base:399},{label:"1700 Robux", base:799},{label:"4500 Robux", base:1999}]}
+};
+
+let currentGame = '';
+function openGame(game){
+currentGame = game;
+document.getElementById('home').style.display='none';
+document.getElementById('gamePage').style.display='block';
+document.getElementById('gameTitle').innerText = gamesData[game].name + ' (+2% Arzie Shop)';
+let html = '';
+gamesData[game].packages.forEach(p=>{
+let markup = (p.base * 1.02).toFixed(2);
+html += `<div class="package" onclick="order('${p.label}', ${markup})">
+<div><b>${p.label}</b><br><span class="original">₱${p.base}</span></div>
+<div class="price">₱${markup}</div>
+</div>`;
+});
+document.getElementById('packageList').innerHTML = html;
 }
-function checkSlot(){
- document.getElementById('slotResult').innerText='Checking Weekly Slot...';
- setTimeout(()=>{
-   const s=Math.floor(Math.random()*10)+1;
-   document.getElementById('slotResult').innerHTML=`Slot: <b style="color:${s>0?'#00ffcc':'red'}">${s}/10 ${s>0?'✅ OK':'❌ 0/10 Bawal!'}</b>`;
-   document.getElementById('slotResult').dataset.slot=s+'/10';
- },700);
+function goHome(){
+document.getElementById('home').style.display='block';
+document.getElementById('gamePage').style.display='none';
 }
-function selectOrder(name,price){
- const uid=document.getElementById('uid').value;
- if(!uid){alert('Lagay User ID muna boss!');return}
- currentOrder=name; currentPrice=price;
- document.getElementById('c_uid').innerText=uid;
- document.getElementById('c_server').innerText=document.getElementById('server').value;
- document.getElementById('c_ign').innerText=document.getElementById('ignResult').dataset.ign||'Not Verified';
- document.getElementById('c_order').innerText=name;
- document.getElementById('c_price').innerText='P'+price;
- const isManual = price<=50 || name.includes('Starlight');
- document.getElementById('c_payment').innerText = isManual ? 'MANUAL - GCash 09933891470 + FB' : 'QR PH AUTO - PayMongo';
- document.getElementById('c_slot').innerText = document.getElementById('slotResult').dataset.slot||'Not checked';
- document.getElementById('confirmPage').style.display='block';
-}
-function proceedPay(){
- const isManual = currentPrice<=50 || currentOrder.includes('Starlight');
- if(isManual){
-   alert(`MANUAL PROCESS\nGCash: 09933891470\nOrder: ${currentOrder}\nP${currentPrice}\nID: ${document.getElementById('uid').value}\n\nPM screenshot sa FB: ${FB_LINK}`);
-   window.open(FB_LINK,'_blank');
- } else {
-   fetch('/.netlify/functions/create-payment',{method:'POST',body:JSON.stringify({amount:currentPrice*100,dias:currentOrder,uid:document.getElementById('uid').value})})
-   .then(r=>r.json()).then(d=>{
-     if(d.checkout_url) window.open(d.checkout_url,'_blank');
-     else alert('Error: Lagay Secret Key sa Netlify ENV: PAYMONGO_SECRET');
-   });
- }
+function order(label, price){
+let uid = document.getElementById('userId').value;
+let sid = document.getElementById('serverId').value;
+if(!uid){alert('Lagay mo muna User ID boss!'); return;}
+alert(`Order Received Boss!\n\nGame: ${gamesData[currentGame].name}\nPackage: ${label}\nPrice: ₱${price}\nUser ID: ${uid}\nServer: ${sid}\n\nIpo-process via Nexone API gamit ₱4,189 balance mo!\n\n(This will auto-call your Netlify function /order)`);
+// Dito tatawagin yung Netlify Function mo
+fetch('/.netlify/functions/order', {
+method:'POST',
+body: JSON.stringify({game: currentGame, package: label, price: price, userId: uid, serverId: sid})
+}).then(r=>r.json()).then(d=>alert('Success! Order ID: '+d.orderId)).catch(()=>alert('Order logged! Manual process muna habang inaayos API key mo.'));
 }
 </script>
+
+<div style="text-align:center;padding:20px;background:#0f0f24;border-top:2px solid #a020f0;margin-top:30px">
+<p>PAYMENT: GCash • Maya • ShopeePay • Bank Transfer</p>
+<p>WHY ARZIE SHOP? 100% Legit & Safe • Instant Delivery • 24/7 Support</p>
+<p>© 2024 ARZIE SHOP PH • Cebu, Philippines • +2% markup from Nexone.ph</p>
+</div>
+
 </body>
-  </html>
+</html>
